@@ -1,0 +1,6 @@
+sampler_label,aggregate_report_count,average,aggregate_report_min,aggregate_report_max,aggregate_report_90%_line,aggregate_report_stddev,aggregate_report_error%,aggregate_report_rate,aggregate_report_bandwidth,average_bytes
+GET Request,1,22,22,22,22,0.0,0.0,45.45454545454545,139.0713778409091,3133.0
+Post Request,1,26,26,26,26,0.0,1.0,38.46153846153847,9.990985576923077,266.0
+PUT Request,1,5,5,5,5,0.0,1.0,200.0,51.953125,266.0
+Delete Request,1,6,6,6,6,0.0,1.0,166.66666666666666,43.294270833333336,266.0
+TOTAL,4,14,5,26,26,9.364160400164021,0.75,64.51612903225806,61.917212701612904,982.75
