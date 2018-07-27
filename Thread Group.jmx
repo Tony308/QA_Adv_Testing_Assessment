@@ -96,7 +96,7 @@
   &quot;address&quot;: &quot;blyat&quot;,&#xd;
   &quot;city&quot;: &quot;Acropylis&quot;,&#xd;
   &quot;firstName&quot;: &quot;string&quot;,&#xd;
-  &quot;id&quot;: 0,&#xd;
+  &quot;id&quot;: 1,&#xd;
   &quot;lastName&quot;: &quot;string&quot;,&#xd;
   &quot;telephone&quot;: &quot;07751951123&quot;&#xd;
 }</stringProp>
@@ -127,7 +127,7 @@
           <stringProp name="HTTPSampler.port">9966</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/petclinic/api/owners </stringProp>
+          <stringProp name="HTTPSampler.path">/petclinic/api/owners/24</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -210,7 +210,7 @@
           <stringProp name="filename">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\SmokeTest\Results Table.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="jp@gc - Graphs Generator" enabled="true">
+        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Graphs Generator" enabled="true">
           <boolProp name="aggregateRows">false</boolProp>
           <boolProp name="autoScaleRows">true</boolProp>
           <stringProp name="endOffset"></stringProp>
@@ -346,8 +346,8 @@
           <stringProp name="filename">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test\results tree.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table - Graphs Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test</stringProp>
+        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table - Graphs Generator" enabled="false">
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test\Table</stringProp>
           <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test\results tree.csv</stringProp>
           <intProp name="exportMode">0</intProp>
           <stringProp name="filePrefix"></stringProp>
@@ -375,7 +375,7 @@
         </kg.apc.jmeter.listener.GraphsGeneratorListener>
         <hashTree/>
         <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Tree - Graphs Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test</stringProp>
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test\Tree</stringProp>
           <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Load Test\results table.csv</stringProp>
           <intProp name="exportMode">0</intProp>
           <stringProp name="filePrefix"></stringProp>
@@ -562,8 +562,8 @@
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table Graph Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Spike Test</stringProp>
+        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table Graph Generator" enabled="false">
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Spike Test\Table</stringProp>
           <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Spike Test\results table.csv</stringProp>
           <intProp name="exportMode">0</intProp>
           <stringProp name="filePrefix"></stringProp>
@@ -591,7 +591,7 @@
         </kg.apc.jmeter.listener.GraphsGeneratorListener>
         <hashTree/>
         <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Tree - Graphs Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Sike Test</stringProp>
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Sike Test\Tree</stringProp>
           <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\SpikeTest\results tree.csv</stringProp>
           <intProp name="exportMode">0</intProp>
           <stringProp name="filePrefix"></stringProp>
@@ -621,13 +621,13 @@
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="Stress Test" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">1000</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1400</stringProp>
         <stringProp name="Threads initial delay">0</stringProp>
         <stringProp name="Start users count">100</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
         <stringProp name="Start users period">10</stringProp>
-        <stringProp name="Stop users count">10</stringProp>
-        <stringProp name="Stop users period">1</stringProp>
+        <stringProp name="Stop users count">140</stringProp>
+        <stringProp name="Stop users period">0</stringProp>
         <stringProp name="flighttime">20</stringProp>
         <stringProp name="rampUp">5</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -727,34 +727,6 @@
           <stringProp name="filename">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\results tree.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table Graph Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\</stringProp>
-          <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\results table.csv</stringProp>
-          <intProp name="exportMode">0</intProp>
-          <stringProp name="filePrefix"></stringProp>
-          <intProp name="graphWidth">800</intProp>
-          <intProp name="graphHeight">600</intProp>
-          <stringProp name="paintMarkers">Undefined</stringProp>
-          <boolProp name="paintZeroing">true</boolProp>
-          <boolProp name="paintGradient">true</boolProp>
-          <boolProp name="preventOutliers">false</boolProp>
-          <boolProp name="relativeTimes">true</boolProp>
-          <boolProp name="autoScaleRows">true</boolProp>
-          <stringProp name="limitRows">150</stringProp>
-          <stringProp name="forceY"></stringProp>
-          <stringProp name="granulation">60000</stringProp>
-          <stringProp name="lineWeight"></stringProp>
-          <boolProp name="aggregateRows">false</boolProp>
-          <stringProp name="lowCountLimit"></stringProp>
-          <stringProp name="successFilter"></stringProp>
-          <boolProp name="includeSamplesWithRegex">false</boolProp>
-          <stringProp name="includeLabels"></stringProp>
-          <boolProp name="excludeSamplesWithRegex">false</boolProp>
-          <stringProp name="excludeLabels"></stringProp>
-          <stringProp name="startOffset"></stringProp>
-          <stringProp name="endOffset"></stringProp>
-        </kg.apc.jmeter.listener.GraphsGeneratorListener>
-        <hashTree/>
         <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="Transactions per Second" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -788,7 +760,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename"></stringProp>
+          <stringProp name="filename">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\TpS.csv</stringProp>
           <longProp name="interval_grouping">1000</longProp>
           <boolProp name="graph_aggregated">false</boolProp>
           <stringProp name="include_sample_labels"></stringProp>
@@ -799,9 +771,65 @@
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
+        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Table Graph Generator" enabled="false">
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\Table</stringProp>
+          <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\results table.csv</stringProp>
+          <intProp name="exportMode">0</intProp>
+          <stringProp name="filePrefix"></stringProp>
+          <intProp name="graphWidth">800</intProp>
+          <intProp name="graphHeight">600</intProp>
+          <stringProp name="paintMarkers">Undefined</stringProp>
+          <boolProp name="paintZeroing">true</boolProp>
+          <boolProp name="paintGradient">true</boolProp>
+          <boolProp name="preventOutliers">false</boolProp>
+          <boolProp name="relativeTimes">true</boolProp>
+          <boolProp name="autoScaleRows">true</boolProp>
+          <stringProp name="limitRows">150</stringProp>
+          <stringProp name="forceY"></stringProp>
+          <stringProp name="granulation">60000</stringProp>
+          <stringProp name="lineWeight"></stringProp>
+          <boolProp name="aggregateRows">false</boolProp>
+          <stringProp name="lowCountLimit"></stringProp>
+          <stringProp name="successFilter"></stringProp>
+          <boolProp name="includeSamplesWithRegex">false</boolProp>
+          <stringProp name="includeLabels"></stringProp>
+          <boolProp name="excludeSamplesWithRegex">false</boolProp>
+          <stringProp name="excludeLabels"></stringProp>
+          <stringProp name="startOffset"></stringProp>
+          <stringProp name="endOffset"></stringProp>
+        </kg.apc.jmeter.listener.GraphsGeneratorListener>
+        <hashTree/>
         <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="Tree - Graphs Generator" enabled="true">
-          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\</stringProp>
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\Tree</stringProp>
           <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\results tree.csv</stringProp>
+          <intProp name="exportMode">0</intProp>
+          <stringProp name="filePrefix"></stringProp>
+          <intProp name="graphWidth">800</intProp>
+          <intProp name="graphHeight">600</intProp>
+          <stringProp name="paintMarkers">Undefined</stringProp>
+          <boolProp name="paintZeroing">true</boolProp>
+          <boolProp name="paintGradient">true</boolProp>
+          <boolProp name="preventOutliers">false</boolProp>
+          <boolProp name="relativeTimes">true</boolProp>
+          <boolProp name="autoScaleRows">true</boolProp>
+          <stringProp name="limitRows">150</stringProp>
+          <stringProp name="forceY"></stringProp>
+          <stringProp name="granulation">60000</stringProp>
+          <stringProp name="lineWeight"></stringProp>
+          <boolProp name="aggregateRows">false</boolProp>
+          <stringProp name="lowCountLimit"></stringProp>
+          <stringProp name="successFilter"></stringProp>
+          <boolProp name="includeSamplesWithRegex">false</boolProp>
+          <stringProp name="includeLabels"></stringProp>
+          <boolProp name="excludeSamplesWithRegex">false</boolProp>
+          <stringProp name="excludeLabels"></stringProp>
+          <stringProp name="startOffset"></stringProp>
+          <stringProp name="endOffset"></stringProp>
+        </kg.apc.jmeter.listener.GraphsGeneratorListener>
+        <hashTree/>
+        <kg.apc.jmeter.listener.GraphsGeneratorListener guiclass="TestBeanGUI" testclass="kg.apc.jmeter.listener.GraphsGeneratorListener" testname="TpS Graph Generator" enabled="true">
+          <stringProp name="outputBaseFolder">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\TpS</stringProp>
+          <stringProp name="resultsFileName">C:\Users\Admin\eclipse-workspace\Adv_Testing_Assessment\Stress Test\TpS.csv</stringProp>
           <intProp name="exportMode">0</intProp>
           <stringProp name="filePrefix"></stringProp>
           <intProp name="graphWidth">800</intProp>

@@ -11,6 +11,8 @@ public class Constant {
 	
 	public static final String url = "http://10.0.10.10:4200/petclinic/";
 	
+	public static final String cucumberReport = "CucumberReport.html";
+	
 	public static String giveResponse(int response) {
 		
 		if (response == 201) {

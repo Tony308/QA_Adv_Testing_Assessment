@@ -2,8 +2,6 @@ package TestSuiteREST;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.qa.Main.Constant;
@@ -25,19 +23,18 @@ public class TestCaseREST {
 	Response response;
 	ValidatableResponse json;
 	
-	ExtentReports report = new ExtentReports(Constant.filepath + Constant.restReport,true);
+	ExtentReports report;
 	ExtentTest test;
 	JSONObject params;
-	JSONObject petParams;
-
+	
 		
 	@Before
 	public void setup() {
 
 		request = given().contentType(ContentType.JSON);
 		params = new JSONObject();
-		petParams = new JSONObject();
-	
+		report = new ExtentReports(Constant.filepath + Constant.restReport,false);
+		report = new ExtentReports("C:\\Users\\Admin\\eclipse-workspace\\Adv_Testing_Assessment\\src\\CucumberReport.html", false);
 	}
 	
 	@After
@@ -50,7 +47,7 @@ public class TestCaseREST {
 	public void getRequest() {
 
 		test = report.startTest("Get Request Test.");
-		
+		test.log(LogStatus.INFO, "Test Started.");
 		test.log(LogStatus.INFO, "Sending request.");
 		
 		response = request.when().get("http://10.0.10.10:9966/petclinic/api/owners");
@@ -68,7 +65,10 @@ public class TestCaseREST {
 	public void postRequest() {
 	
 		test = report.startTest("Post Request Test.");
-		params.put("id", "13");
+		
+		test.log(LogStatus.INFO, "Test Started.");
+		//an id is required despite not needed to post.
+		params.put("id", "1");
 		params.put("address", "something");
 		params.put("city", "London");
 		params.put("firstName", "Tony");
@@ -78,22 +78,21 @@ public class TestCaseREST {
 		
 		test.log(LogStatus.INFO, "Sending request.");
 		response = request.post("http://10.0.10.10:9966/petclinic/api/owners");
-
+		test.log(LogStatus.INFO, "Response code: "+ response.getStatusCode());
 		if (response.getStatusCode() != 201) {
 			test.log(LogStatus.FAIL, "Test failed. Response Code: " + Constant.giveResponse(response.getStatusCode()));
 		}
 		assertEquals(201, response.getStatusCode());
+		test.log(LogStatus.PASS, "Test passed.");
 	}
 	
 	@Test
 	public void getBySurname() {
-		
-
 		test = report.startTest("Get by surname request.");
-		
+		test.log(LogStatus.INFO, "Test Started.");
 		test.log(LogStatus.INFO, "Sending request.");
 		response = request.when().get("http://10.0.10.10:9966/petclinic/api/owners/*/lastname/Davis");
-
+		test.log(LogStatus.INFO, "Response code: " + response.getStatusCode());
 		if (response.getStatusCode() != 200) {
 			test.log(LogStatus.FAIL, "Test failed. Response Code: " + Constant.giveResponse(response.getStatusCode()));
 		}
@@ -102,17 +101,16 @@ public class TestCaseREST {
 	}
 	
 	@Test
-	@Ignore
 	public void deleteRequest() {
-
+		int id = 19;
 		test = report.startTest("Delete Request Test");
+		test.log(LogStatus.INFO, "Sending request");
+		test.log(LogStatus.INFO, "Deleting record at id " + id);
+		response = request.delete("http://10.0.10.10:9966/petclinic/api/owners/" + id);
 		
-		response = request.delete("http://10.0.10.10:9966/petclinic/api/owners/13");
+		test.log(LogStatus.INFO, "Response code: " + response.getStatusCode());
 		
 		if (response.getStatusCode() != 204) {
-			if (response.getStatusCode() == 404) {
-				test.log(LogStatus.FAIL, "Test failed. Record with ID 13 hasn't been created yet.");
-			}
 			test.log(LogStatus.FAIL, "Test failed. Response Code: " + Constant.giveResponse(response.getStatusCode()));
 		}
 		
@@ -122,19 +120,23 @@ public class TestCaseREST {
 	
 	@Test
 	public void putRequest() {
+		int id = 1;
 		test = report.startTest("Put Request Test.");
+		test.log(LogStatus.INFO, "Test Started.");
 		
 		params.put("address", "something");
 		params.put("city", "London");
-		params.put("firstName", "Tony");
+		params.put("firstName", "Cheesey");
 		params.put("id",  "1");
 		params.put("lastName", "Huang");
 		params.put("telephone", "07751951707");
 		request.body(params.toString());
 		
 		test.log(LogStatus.INFO, "Sending request.");
-		response = request.put("http://10.0.10.10:9966/petclinic/api/owners/1");
-
+		test.log(LogStatus.INFO, "Updating record at id "+ id);
+		response = request.put("http://10.0.10.10:9966/petclinic/api/owners/" + id );
+		
+		test.log(LogStatus.INFO, "Response code: "+ response.getStatusCode());
 		if (response.getStatusCode() != 204) {
 			test.log(LogStatus.FAIL, "Test failed. Response Code: " + Constant.giveResponse(response.getStatusCode()));
 		}
